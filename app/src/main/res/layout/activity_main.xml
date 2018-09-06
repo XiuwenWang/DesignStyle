@@ -2,22 +2,23 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/black"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <!--snap 当滑动临界值 自动回原位-->
-        <android.support.design.widget.CollapsingToolbarLayout
+        <FrameLayout
             android:id="@+id/collapsing_tool_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:collapsedTitleGravity="center"
+            app:statusBarScrim="@color/colorAccent"
             app:contentScrim="@color/colorPrimary"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             app:title="汗水从不说谎">
 
             <ImageView
@@ -25,9 +26,18 @@
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/ic_launcher"
+                android:contentDescription="@string/img"
                 />
 
-        </android.support.design.widget.CollapsingToolbarLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                android:background="@android:color/holo_red_dark"
+                app:layout_collapseMode="parallax"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </FrameLayout>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
