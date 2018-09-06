@@ -30,7 +30,8 @@
 以下内如来自简书
 <br>https://www.jianshu.com/p/5287d090e777
 
-CoordinatorLayout 协调员布局
+#### CoordinatorLayout 协调员布局
+
 是用来协调其子view并以触摸影响布局的形式产生动画效果的一个super-powered FrameLayout，
 其典型的子View包括：FloatingActionButton，SnackBar。注意：CoordinatorLayout是一个顶级父View。
 
