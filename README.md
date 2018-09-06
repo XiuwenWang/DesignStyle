@@ -3,7 +3,7 @@ CoordinatorLayout 协调员布局
 是用来协调其子view并以触摸影响布局的形式产生动画效果的一个super-powered FrameLayout，
 其典型的子View包括：FloatingActionButton，SnackBar。注意：CoordinatorLayout是一个顶级父View。
 
-###AppBarLayout
+### AppBarLayout
 
 AppBarLayout是一个实现了很多材料设计特性的垂直的LinearLayout，它能响应滑动事件。必须在它的子view上设置app:layout_scrollFlags属性或者是在代码中调用setScrollFlags()设置这个属性。这个类的特性强烈依赖于它是否是一个CoordinatorLayout的直接子view，如果不是，那么它的很多特性不能够使用。AppBarLayout需要一个具有滑动属性的兄弟节点view，并且在这个兄弟节点View中指定behavior属性为AppBarLayout.ScrollingViewBehavior的类实例，可以使用一个内置的string表示这个默认的实例@string/appbar_scrolling_view_behavior。
 
@@ -15,7 +15,7 @@ enterAlwaysCollapsed：假设你定义了一个最小高度（minHeight）同时
 exitUntilCollapsed：当你定义了一个minHeight，此布局将在滚动到达这个最小高度的时候折叠。
 snap：当一个滚动事件结束，如果视图是部分可见的，那么它将被滚动到收缩或展开。例如，如果视图只有底部25%显示，它将折叠。相反，如果它的底部75%可见，那么它将完全展开。
 
-###CollapsingToolbarLayout
+### CollapsingToolbarLayout
 
 CollapsingToolbarLayout作用是提供了一个可以折叠的Toolbar，它继承自FrameLayout，给它设置layout_scrollFlags，它可以控制包含在CollapsingToolbarLayout中的控件(如：ImageView、Toolbar)在响应layout_behavior事件时作出相应的scrollFlags滚动事件(移除屏幕或固定在屏幕顶端)。CollapsingToolbarLayout可以通过app:contentScrim设置折叠时工具栏布局的颜色，通过app:statusBarScrim设置折叠时状态栏的颜色。默认contentScrim是colorPrimary的色值，statusBarScrim是colorPrimaryDark的色值。
 
@@ -27,7 +27,7 @@ pin：CollapsingToolbarLayout折叠后，此布局将固定在顶部。
 parallax：CollapsingToolbarLayout折叠时，此布局也会有视差折叠效果。
 当CollapsingToolbarLayout的子布局设置了parallax模式时，我们还可以通过app:layout_collapseParallaxMultiplier设置视差滚动因子，值为：0~1。
 
-###Behavior
+### Behavior
 
 Behavior是Android新出的Design库里新增的布局概念。Behavior只有是CoordinatorLayout的直接子View才有意义。
 只要将Behavior绑定到CoordinatorLayout的直接子元素上，就能对触摸事件（touch events）、window insets、measurement、layout以及嵌套滚动
