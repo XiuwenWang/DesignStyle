@@ -1,4 +1,35 @@
 # Android Design 风格
+
+### CoordinatorLayout 
+
+协调AppBarLayout 和 滑动ContentView 一起动 --设置 ContentView(app:layout_behavior="@string/appbar_scrolling_view_behavior")
+
+### AppBarLayout 
+
+需要在子View设置 可以是：CollapsingToolbarLayout
+
+### CollapsingToolbarLayout
+
+<br>app:layout_scrollFlags="scroll|snap|exitUntilCollapsed|enterAlways|enterAlwaysCollapsed"
+<br>scroll：必须项，没有设置不能滑动
+<br>snap：就是不会停在中间 会自动滑到边界
+<br>exitUntilCollapsed：exit退出 就是上滑 当你定义了一个minHeight，此布局将在滚动到达这个最小高度的时候折叠
+<br>enterAlwaysCollapsed：enter进入 就是下滑 意思同上
+<br>enterAlways：这个flag让任意向下的滚动都会导致该view变为可见
+
+### Toolbar
+
+<br>app:layout_collapseMode="pin"
+<br>none：默认属性，布局将正常显示，无折叠行为。
+<br>pin：CollapsingToolbarLayout折叠后，此布局将固定在顶部。
+<br>parallax：CollapsingToolbarLayout折叠时，此布局也会有视差折叠效果。
+<br>app:layout_collapseParallaxMultiplier="0.7"
+<br>视差：说明了 就是一个快一个慢 滑动不同步
+
+
+以下内如来自简书
+<br>https://www.jianshu.com/p/5287d090e777
+
 CoordinatorLayout 协调员布局
 是用来协调其子view并以触摸影响布局的形式产生动画效果的一个super-powered FrameLayout，
 其典型的子View包括：FloatingActionButton，SnackBar。注意：CoordinatorLayout是一个顶级父View。
